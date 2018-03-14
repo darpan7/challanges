@@ -1,6 +1,8 @@
 package Challenges;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -50,39 +52,64 @@ Output:
  */
 
 public class Challenge1 {
+	private static Map<String, Matrix> savedMatrices = new HashMap<String, Matrix>();
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int T = scanner.nextInt();
 		while(T>0) {
+			savedMatrices.clear();
 			int[] input = readElements(scanner);
 			Matrix[] matrices = convertIntoMatrix(input);
 			int dotposition = matrices.length-1;
 			long min = Integer.MAX_VALUE;
 			String orderOfOperation = null;
-			p(Arrays.toString(matrices));
 			while(dotposition>0) {
-//				Matrix result = multiplyMatrix(matrices, 0, dotposition);
+				Matrix left = multiplyMatrix(matrices, dotposition-1, 0, dotposition-1);
+				Matrix right = multiplyMatrix(matrices, dotposition, dotposition, matrices.length-1);
+				Matrix result = left.dot(right);
+				if(result.operations < min) {
+					min = result.operations;
+					orderOfOperation = result.name;
+				}
 				--dotposition;
-//				if(result.operations < min) {
-//					min = result.operations;
-//					orderOfOperation = result.name;
-//				}
 			}
-			System.out.println(orderOfOperation);
+			p(orderOfOperation);
 			--T;
 		}
 		scanner.close();
 	}
-	public static void p(Object o) {
-		System.out.println(o.toString());
-	}
-	public static Matrix multiplyMatrix(Matrix[] matrices, int start, int end) {
-		if(start == end || start > end || end > matrices.length) {
-			return matrices[end];
+	public static String getKey(Matrix[] matrices, int start, int end){
+		if(start > end){
+			return null;
 		}
-		return multiplyMatrix(matrices, start, end-1).dot(multiplyMatrix(matrices, end, end+1));
+		StringBuilder sb = new StringBuilder();
+		for(int i=start; i<=end; i++){
+			sb.append(matrices[i].name);
+		}
+		return sb.toString();
 	}
-	
+	public static Matrix multiplyMatrix(Matrix[] matrices, int dotposition, int start, int end) {
+		String name = getKey(matrices, start, end);
+		if(savedMatrices.get(name)!= null){
+			return savedMatrices.get(name);
+		}
+		if(start >= end || dotposition == 0){
+			return matrices[dotposition];
+		}
+		Matrix result = null;
+		for(int i=end; i>start; i--){
+			Matrix left = multiplyMatrix(matrices, i-1, start, i-1);
+			Matrix right = multiplyMatrix(matrices, i, i, end);
+			Matrix dot = left.dot(right);
+			if(result == null || result.operations == null || result.operations > dot.operations){
+				result = dot;
+			}
+		}
+		if(savedMatrices.get(result.name)==null){
+			savedMatrices.put(result.name.replaceAll("[^a-zA-Z]", ""), result);
+		}
+		return result;
+	}
 	public static int[] readElements(Scanner scanner) {
 		int N = scanner.nextInt();
 		int[] array = new int[N];
@@ -101,6 +128,9 @@ public class Challenge1 {
 			matrices[i-1] = matrix;
 		}
 		return matrices;
+	}
+	public static void p(Object o) {
+		System.out.println(o.toString());
 	}
 }
 
