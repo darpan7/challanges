@@ -1,12 +1,10 @@
 package Challenges;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
 * @author {
@@ -60,7 +58,7 @@ public class Challenge3 {
 				}else{
 					rw = false;
 				}
-				graph.addNode(new Node(name, i, rw));
+				graph.addNode(new Node(name, i, rw)); //adds node into graph and creates their edges[paths].
 			}
 			graph.calculateSubSequences();
 			System.out.println(graph.count);
@@ -110,33 +108,6 @@ public class Challenge3 {
 						break;
 				}
 			}
-//			switch(node.name){
-//			case "a":
-//				startingNodes.add(node);
-//				for(int i=0; i<node.index; i++){
-//					V prev = nodesByIndex.get(i);
-//					if(prev.name.equals(node.name)){
-//						prev.inbound.add(node);
-//					}
-//				}
-//				break;
-//			case "b":
-//				for(int i=0; i<node.index; i++){
-//					V prev = nodesByIndex.get(i);
-//					if(prev.name.equals(node.name) || prev.name.equals("a")){
-//						prev.inbound.add(node);
-//					}
-//				}
-//				break;
-//			case "c":
-//				for(int i=0; i<node.index; i++){
-//					V prev = nodesByIndex.get(i);
-//					if(prev.name.equals(node.name) || prev.name.equals("b")){
-//						prev.inbound.add(node);
-//					}
-//				}
-//				break;
-//			}
 		}
 		public void calculateSubSequences(){
 			for(V start: startingNodes){
