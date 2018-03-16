@@ -62,11 +62,97 @@ public class Challenge3 {
 				}
 				graph.addNode(new Node(name, i, rw));
 			}
-			graph.calculate();
-			//System.out.println(graph.count);
+			graph.calculateSubSequences();
+			System.out.println(graph.count);
 			--T;
 		}
 		scanner.close();
+	}
+	public static class Graph<V extends Node> {
+		Map<String, List<V>> nodes;
+		List<V> nodesByIndex;
+		List<V> startingNodes;
+		int count;
+		
+		public Graph(){
+			nodes = new HashMap<String, List<V>>();
+			startingNodes = new ArrayList<V>();
+			nodesByIndex = new ArrayList<V>();
+		}
+		public void addNode(V node){
+			if(node.isTerminal){
+				node.inbound.add(null);
+			}
+			nodesByIndex.add(node);
+			build(node);
+		}
+		public void build(V node){
+			if(node.name.equals("a")){
+				startingNodes.add(node);
+			}
+			for(int i=0; i<node.index; i++){
+				V prev = nodesByIndex.get(i);
+				switch(node.name){
+					case "a":
+						if(prev.name.equals(node.name)){
+							prev.inbound.add(node);
+						}
+						break;
+					case "b":
+						if (prev.name.equals(node.name) || prev.name.equals("a")) {
+							prev.inbound.add(node);
+						}
+						break;
+					case "c":
+						if (prev.name.equals(node.name) || prev.name.equals("b")) {
+							prev.inbound.add(node);
+						}
+						break;
+				}
+			}
+//			switch(node.name){
+//			case "a":
+//				startingNodes.add(node);
+//				for(int i=0; i<node.index; i++){
+//					V prev = nodesByIndex.get(i);
+//					if(prev.name.equals(node.name)){
+//						prev.inbound.add(node);
+//					}
+//				}
+//				break;
+//			case "b":
+//				for(int i=0; i<node.index; i++){
+//					V prev = nodesByIndex.get(i);
+//					if(prev.name.equals(node.name) || prev.name.equals("a")){
+//						prev.inbound.add(node);
+//					}
+//				}
+//				break;
+//			case "c":
+//				for(int i=0; i<node.index; i++){
+//					V prev = nodesByIndex.get(i);
+//					if(prev.name.equals(node.name) || prev.name.equals("b")){
+//						prev.inbound.add(node);
+//					}
+//				}
+//				break;
+//			}
+		}
+		public void calculateSubSequences(){
+			for(V start: startingNodes){
+				traverse(start.inbound, start.name+start.index, start.isTerminal);
+			}
+		}
+		public void traverse(List<Node> start, String s, boolean end){
+			for(Node n: start){
+				if(end && n == null){
+					System.out.println(s);
+					++this.count;
+					continue;
+				}
+				traverse(n.inbound, s+n.name+n.index, n.isTerminal);
+			}
+		}
 	}
 	public static class Node{
 		String name;
@@ -80,128 +166,10 @@ public class Challenge3 {
 			this.isTerminal = isTerminal;
 			this.inbound = new ArrayList<Node>();
 		}
-
 		@Override
 		public String toString() {
-			return "Node [" + name + ":" + index + "]";
+			return "Node[" + name + ":" + index + "]";
 		}
-		
-		
 	}
-	public static class Graph<V extends Node> {
-		Map<String, List<V>> nodes;
-		List<V> nodesByIndex;
-		List<V> startingNodes;
-		List<Integer> As;
-		List<Integer> Bs;
-		List<Integer> Cs;
-		int count;
-		
-		public Graph(){
-			nodes = new HashMap<String, List<V>>();
-			startingNodes = new ArrayList<V>();
-			initiate();
-		}
-		public void initiate(){
-			nodesByIndex = new ArrayList<V>();
-			As = new ArrayList<Integer>();
-			Bs = new ArrayList<Integer>();
-			Cs = new ArrayList<Integer>();
-		}
-		public void sort(){
-			Collections.sort(As);
-			Collections.sort(Bs);
-			Collections.sort(Cs);
-		}
-		public void addNode(V node){
-			if(node.isTerminal){
-				//System.out.println("Adding null for " + node.name + node.index);
-				node.inbound.add(null);
-			}
-			List<V> typedNodes = nodes.get(node.name);
-			nodesByIndex.add(node);
-			if(typedNodes==null){
-				typedNodes = new ArrayList<V>();
-			}
-			typedNodes.add(node);
-			nodes.put(node.name, typedNodes);
-			switch(node.name){
-			case "a":
-				startingNodes.add(node);
-				for(int i=0; i<node.index; i++){
-					V prev = nodesByIndex.get(i);
-					if(prev.name.equals(node.name)){
-						prev.inbound.add(node);
-					}
-				}
-				break;
-			case "b":
-				//Bs.add(node.index);
-				for(int i=0; i<node.index; i++){
-					V prev = nodesByIndex.get(i);
-					if(prev.name.equals(node.name) || prev.name.equals("a")){
-						prev.inbound.add(node);
-					}
-				}
-				break;
-			case "c":
-				//Cs.add(node.index);
-				for(int i=0; i<node.index; i++){
-					V prev = nodesByIndex.get(i);
-					if(prev.name.equals(node.name) || prev.name.equals("b")){
-						prev.inbound.add(node);
-					}
-				}
-				break;
-			default:
-			}
-			//calculate();
-		}
-		public void rec(List<Node> start, String s, boolean end){
-			//System.out.println(start);
-			for(Node n: start){
-				if(end && n == null){
-					System.out.println(s);
-					continue;
-				}
-				//System.out.print("\t" + n.name + n.index + ": ");
-				rec(n.inbound, s+n.name+n.index, n.isTerminal);
-			}
-			
-		}
-		public void calculate(){
-			for(V start: startingNodes){
-				//System.out.print(start.name + start.index + ": " + start.inbound + "\n");
-				rec(start.inbound, start.name+start.index, start.isTerminal);
-			}
-			////////
-//			sort();
-//			Set<String> set = nodes.keySet();
-//			for(String type: set){
-//				List<V> list = nodes.get(type);
-//				switch(type){
-//				case "a":
-//					for(V node: list){
-//						int id = As.indexOf(node.index);
-//						if(id < 0){
-//							
-//						}else if (id == As.size()-1){
-//							
-//						}else{
-//							for(int i=id+1; i<As.size(); i++){
-//								node.inbound.add(node);
-//							}
-//						}
-//					}
-//					break;
-//				case "b":
-//					break;
-//				case "c":
-//					break;
-//				default:
-//				}
-//			}
-		} 
-		
-	}
+	
 }
