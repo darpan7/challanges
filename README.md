@@ -5,3 +5,4 @@ Problems and their solutions
 * Challenge 2: Count total set bits in all numbers from 1 to n
 * Challenge 3: Count subsequences of type a^i b^j c^k
 * Challenge 4: Given an array of integers, replace every element with the next greatest element (greatest element on the right side) in the array.
+* Challenge 5: Highest power of 2 less than or equal to given number 
