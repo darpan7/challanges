@@ -1,4 +1,4 @@
-# challenges
+# Challenges
 Problems and their solutions
 
 * Challenge 1: Matrix Chain Multiplication 
