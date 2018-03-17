@@ -43,7 +43,7 @@ public class Challenge5 {
 		while(T > 0){
 			scanner.nextLine();
 			long number = scanner.nextLong();
-			int bits = bitsInBinary(number); //Long.toBinaryString(number).length();
+			int bits = bitsInBinary(number); //Long.toBinaryString(number).length(); //(int) (Math.log(number)/Math.log(2));
 			long highestPower = (long)Math.pow(2, bits);
 			System.out.println(highestPower);
 			--T;
@@ -54,7 +54,7 @@ public class Challenge5 {
 		int bits = 0;
 		while(number > 0){
 			++bits;
-			number = number/2;
+			number = number>>1;
 		}
 		return bits-1;
 	}
