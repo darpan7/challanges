@@ -50,7 +50,7 @@ public class Challenge6 {
 	}
 	public static int countPossiblePaths(int[][] matrix, int N, int M){
 		if(N == 0 && M == 0){
-			return 0;
+			return 1;
 		}
 		// horizontal bottom line with 1: as there is only one possible path to go right side.
 		for(int j=M-1; j>=0; j--){
