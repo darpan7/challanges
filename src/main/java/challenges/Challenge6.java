@@ -33,7 +33,7 @@ import common.Reader;
 */
 
 public class Challenge6 {
-
+	public static final int modulo = 1000000007;
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int T = scanner.nextInt();
@@ -65,10 +65,9 @@ public class Challenge6 {
 		// rest of cells: summation of its children`s paths. [right + down]
 		for(int i=N-1; i>=0; i--){
 			for(int j=M-1; j>=0; j--){
-				matrix[i][j] = matrix[i][j+1] + matrix[i+1][j];
+				matrix[i][j] = matrix[i][j+1]%modulo + matrix[i+1][j]%modulo;
 			}
 		}
-		int modulo = (int)Math.pow(10, 9) + 7;
-		return (int) (matrix[0][0]%(1000000000L + 7));
+		return (int) (matrix[0][0]%(modulo));
 	}
 }
