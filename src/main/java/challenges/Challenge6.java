@@ -2,8 +2,6 @@ package challenges;
 
 import java.util.Scanner;
 
-import common.Reader;
-
 /**
 * @date	Mar 19, 2018 1:09:13 PM
 * @author Darpan Shah

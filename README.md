@@ -7,3 +7,5 @@ Problems and their solutions
 * Challenge 4: Given an array of integers, replace every element with the next greatest element (greatest element on the right side) in the array.
 * Challenge 5: Highest power of 2 less than or equal to given number
 * Challenge 6: Count all possible paths from top left to bottom right of a mXn matrix.
+* Challenge 7: Find a pair with maximum product in array of Integers.
+* Challenge 8: Given a binary string, count number of substrings that start and end with 1.
