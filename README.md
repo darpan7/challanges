@@ -11,3 +11,4 @@ Problems and their solutions
 * Challenge 8: Given a binary string, count number of substrings that start and end with 1.
 * Challenge 9: Given only a pointer/reference to a node to be deleted in a singly linked list, how do you delete it?
 * Challenge 10: Write a Program to Find the Maximum Depth or Height of a Tree.
+* Challenge 11: Print nodes at k distance from root.
