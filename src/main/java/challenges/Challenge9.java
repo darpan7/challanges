@@ -2,6 +2,8 @@ package challenges;
 
 import java.util.Scanner;
 
+import common.LinkedList;
+
 /**
 * @date	Mar 21, 2018 10:14:40 AM
 * @author Darpan Shah
@@ -33,20 +35,20 @@ public class Challenge9 {
 		int T = scanner.nextInt();
 		while (T > 0) {
 			int n = scanner.nextInt();
-			Node root = null;
-			Node node = null;
+			LinkedList root = null;
+			LinkedList node = null;
 			root = scanAllNodes(scanner, node, n, root);
 			int del = scanner.nextInt();
-			Node delnode = findNode(del, root);
+			LinkedList delnode = LinkedList.findNode(del, root);
 			deleteNode(delnode);
-			printNode(root);
+			LinkedList.printLinkedList(root);
 			--T;
 		}
 		scanner.close();
 	}
-	public static Node scanAllNodes(Scanner scanner, Node node, int n, Node root){
+	public static LinkedList scanAllNodes(Scanner scanner, LinkedList node, int n, LinkedList root){
 		for(int i=0; i<n; i++){
-			Node next = new Node(scanner.nextInt());
+			LinkedList next = new LinkedList(scanner.nextInt());
 			if(node != null){
 				node.next = next;
 			}else{
@@ -56,39 +58,10 @@ public class Challenge9 {
 		}
 		return root;
 	}
-	public static Node findNode(int del, Node root){
-		Node node = root;
-		while(node!=null){
-			if(node.data == del){
-				return node;
-			}
-			node = node.next;
-		}
-		return null;
-	}
-	public static void printNode(Node root){
-		Node node = root;
-		StringBuilder sb = new StringBuilder();
-		while(node!=null){
-			sb.append(node.data); sb.append(" ");
-			node = node.next;
-		}
-		System.out.println("Updated Linked List: " + sb.toString().trim());
-	}
-	public static void deleteNode(Node del){
+	
+	public static void deleteNode(LinkedList del){
 		del.data = del.next.data;
 		del.next = del.next.next;
 	}
 
-}
-class Node{
-	int data;
-	Node next;
-	
-	Node(int data){
-		this.data = data;
-		this.next = null;
-	}
-	Node(){
-	}
 }
