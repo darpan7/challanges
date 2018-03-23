@@ -39,7 +39,7 @@ public class Challenge11 {
         	int n = scanner.nextInt();
             int k = scanner.nextInt();
             BinaryNode root = BinaryTreeBuilder.createBinaryTree(scanner, n);
-            BinaryNode.distanceFromRoot(root, 0, k);
+            BinaryNode.printNodesAtKDistanceFromRoot(root, 0, k);
         	--t;
         }
         scanner.close();

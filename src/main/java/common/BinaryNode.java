@@ -21,17 +21,30 @@ public class BinaryNode {
 		return (Math.max(height(root.left), height(root.right)) + 1);
 	}
 	
-	public static void distanceFromRoot(BinaryNode root, int currentDistance, int lookingFor){
+	public static void printNodesAtKDistanceFromRoot(BinaryNode root, int currentDistance, int k){
 		if(root==null){
 			return;
 		}
-		if(currentDistance == lookingFor){
+		if(currentDistance == k){
 			System.out.print(root.data + " ");
 		}
 		++currentDistance;
 		
-		distanceFromRoot(root.left, currentDistance, lookingFor);
-		distanceFromRoot(root.right, currentDistance, lookingFor);
+		printNodesAtKDistanceFromRoot(root.left, currentDistance, k);
+		printNodesAtKDistanceFromRoot(root.right, currentDistance, k);
+	}
+	
+	public static void getLevelDiff(BinaryNode root, int currentLevel, OddEven storage){
+		if(root == null){
+			return;
+		}
+		if(currentLevel%2 == 0){
+			storage.even += root.data;
+		}else{
+			storage.odd += root.data;
+		}
+		getLevelDiff(root.left, currentLevel+1, storage);
+		getLevelDiff(root.right, currentLevel+1, storage);
 	}
 
 	@Override

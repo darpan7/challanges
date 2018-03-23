@@ -12,3 +12,4 @@ Problems and their solutions
 * Challenge 9: Given only a pointer/reference to a node to be deleted in a singly linked list, how do you delete it?
 * Challenge 10: Write a Program to Find the Maximum Depth or Height of a Tree.
 * Challenge 11: Print nodes at k distance from root.
+* Challenge 12: Difference between sums of odd level and even level nodes of a Binary Tree.
