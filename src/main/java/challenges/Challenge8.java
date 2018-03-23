@@ -36,7 +36,7 @@ public class Challenge8 {
 		int T = scanner.nextInt();
 		while (T > 0) {
 			scanner.nextLine();
-			int n = scanner.nextInt();
+			scanner.nextInt();
 			scanner.nextLine();
 			String binary = scanner.next();
 			int i=binary.indexOf("1", 0);
