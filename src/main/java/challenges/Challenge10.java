@@ -1,6 +1,9 @@
 package challenges;
 
+import java.util.Scanner;
+
 import common.BinaryNode;
+import common.BinaryTreeBuilder;
 
 /**
 * @date	Mar 22, 2018 10:40:11 AM
@@ -42,14 +45,15 @@ Output:
 public class Challenge10 {
 
 	public static void main(String[] args) {
-		BinaryNode root = new BinaryNode(1);
-		BinaryNode left = new BinaryNode(10);
-		left.left = new BinaryNode(5);
-		BinaryNode right = new BinaryNode(39);
-		root.left = left;
-		root.right = right;
-		
-		System.out.print(BinaryNode.height(root));
+		Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        while(t >0){
+        	int n = scanner.nextInt();
+            BinaryNode root = BinaryTreeBuilder.createBinaryTree(scanner, n);
+            System.out.print(BinaryNode.height(root));
+        	--t;
+        }
+        scanner.close();
 	}
 
 }

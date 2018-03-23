@@ -1,6 +1,9 @@
 package challenges;
 
+import java.util.Scanner;
+
 import common.BinaryNode;
+import common.BinaryTreeBuilder;
 
 /**
 * @date	Mar 22, 2018 12:19:08 PM
@@ -17,20 +20,29 @@ For example, in the below tree, 4, 5 & 8 are at distance 2 from root.
      2     3
    /  \    /
   4    5  8 
+Input:
+2
+2 0
+1 2 R 1 3 L
+4 2
+10 20 L 10 30 R 20 40 L 20 60 R
+Output:
+1
+40 60
  */
 public class Challenge11 {
 
 	public static void main(String[] args) {
-		BinaryNode root = new BinaryNode(1);
-		BinaryNode left = new BinaryNode(2);
-		left.left = new BinaryNode(4);
-		left.right = new BinaryNode(5);
-		BinaryNode right = new BinaryNode(3);
-		right.left = new BinaryNode(8);
-		root.left = left;
-		root.right = right;
-		
-		BinaryNode.distanceFromRoot(root, 0, 2);
+		Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        while(t >0){
+        	int n = scanner.nextInt();
+            int k = scanner.nextInt();
+            BinaryNode root = BinaryTreeBuilder.createBinaryTree(scanner, n);
+            BinaryNode.distanceFromRoot(root, 0, k);
+        	--t;
+        }
+        scanner.close();
 	}
 
 }
