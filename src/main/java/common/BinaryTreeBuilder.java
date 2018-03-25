@@ -33,4 +33,7 @@ public class BinaryTreeBuilder {
         }
         return root;
 	}
+	public static BinaryNode createBinaryTree(int n) {
+        return new BinaryNode(n);
+	}
 }

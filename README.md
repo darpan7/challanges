@@ -13,3 +13,4 @@ Problems and their solutions
 * Challenge 10: Write a Program to Find the Maximum Depth or Height of a Tree.
 * Challenge 11: Print nodes at k distance from root.
 * Challenge 12: Difference between sums of odd level and even level nodes of a Binary Tree.
+* Challenge 13: Construct a special tree from given preorder traversal.

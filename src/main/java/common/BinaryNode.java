@@ -1,4 +1,7 @@
 package common;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
 * @date	Mar 22, 2018 11:00:38 AM
 * @author Darpan Shah
@@ -45,6 +48,82 @@ public class BinaryNode {
 		}
 		getLevelDiff(root.left, currentLevel+1, storage);
 		getLevelDiff(root.right, currentLevel+1, storage);
+	}
+	
+	public static void printBinaryTree(String order, BinaryNode root){
+		switch(order){
+			case "Pre":
+				printPreOrder(root);
+				break;
+			case "In":
+				printInOrder(root);
+				break;
+			case "Post":
+				printPostOrder(root);
+				break;
+		}
+	}
+	
+	private static void printPreOrder(BinaryNode root){
+		if(root == null){
+			return;
+		}
+		System.out.print(root.data + " ");
+		printPreOrder(root.left);
+		printPreOrder(root.right);
+	}
+	public static BinaryNode getBinaryTreeFromPreOrderArray(int[] pre, char[] preLN){
+		BinaryNode root = null;
+		BinaryNode parent = null;
+		AtomicInteger i = new AtomicInteger(0);
+		root = rec(pre, preLN, i, root, parent, "left");
+		return root;
+	}
+	public static BinaryNode rec(int[] pre, char[] preLN, AtomicInteger i, BinaryNode root, BinaryNode parent, String side){
+		if(i.get()>=pre.length || i.get()==-1)
+			return null;
+		BinaryNode node = new BinaryNode(pre[i.get()]);
+		if(preLN[i.get()] == 'N'){
+			if(root==null){
+				root = node;
+				parent = node;
+				i.incrementAndGet();
+				rec(pre, preLN, i, root, parent, "left");
+				i.incrementAndGet();
+				return rec(pre, preLN, i, root, parent, "right");
+			}else{
+				i.incrementAndGet();
+				rec(pre, preLN, i, root, node, "left");
+				i.incrementAndGet();
+				rec(pre, preLN, i, root, node, "right");
+			}
+		}
+		switch (side) {
+		case "left":
+			parent.left = node;
+			break;
+		case "right":
+			parent.right = node;
+			break;
+		}
+		return root;
+
+	}
+	private static void printInOrder(BinaryNode root){
+		if(root == null){
+			return;
+		}
+		printPreOrder(root.left);
+		System.out.print(root.data + " ");
+		printPreOrder(root.right);
+	}
+	private static void printPostOrder(BinaryNode root){
+		if(root == null){
+			return;
+		}
+		printPreOrder(root.left);
+		printPreOrder(root.right);
+		System.out.print(root.data + " ");
 	}
 
 	@Override
