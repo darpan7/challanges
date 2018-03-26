@@ -16,6 +16,13 @@ Examples:
     102 - 152
     1020 - 1525 
 Use of array to store all digits is not allowed.
+Input:
+2 // no of test cases
+102
+1020
+Output:
+152
+1525
  */
 public class Challenge15 {
 
