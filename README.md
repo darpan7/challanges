@@ -15,3 +15,4 @@ Problems and their solutions
 * Challenge 12: Difference between sums of odd level and even level nodes of a Binary Tree.
 * Challenge 13: Construct a special tree from given preorder traversal.
 * Challenge 14: Tree Isomorphism Problem. 
+* Challenge 15: Replace all ‘0’ with ‘5’ in an input Integer.[without using array]
