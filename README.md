@@ -16,3 +16,5 @@ Problems and their solutions
 * Challenge 13: Construct a special tree from given preorder traversal.
 * Challenge 14: Tree Isomorphism Problem. 
 * Challenge 15: Replace all ‘0’ with ‘5’ in an input Integer.[without using array]
+* Challenge 16: Pair with given product | Set 1 (Find if any pair exists).
+* Challenge 17: Position of rightmost set bit.
