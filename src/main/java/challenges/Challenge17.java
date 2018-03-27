@@ -1,4 +1,9 @@
 package challenges;
+
+import java.util.Scanner;
+
+import common.Binary;
+
 /**
 * @date	Mar 26, 2018 4:23:49 PM
 * @author Darpan Shah
@@ -16,7 +21,15 @@ O/P   1
 public class Challenge17 {
 
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int T = scanner.nextInt(); 
 		
+		while(T > 0){
+			int n = scanner.nextInt();
+			System.out.println(Binary.positionOfBit(n, 1, -1));
+			--T;
+		}
+		scanner.close();
 	}
 
 }
