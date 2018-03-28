@@ -18,3 +18,4 @@ Problems and their solutions
 * Challenge 15: Replace all ‘0’ with ‘5’ in an input Integer.[without using array]
 * Challenge 16: Pair with given product | Set 1 (Find if any pair exists).
 * Challenge 17: Position of rightmost set bit.
+* Challenge 18: Print all possible strings that can be made by placing spaces.
