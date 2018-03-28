@@ -20,3 +20,5 @@ Problems and their solutions
 * Challenge 17: Position of rightmost set bit.
 * Challenge 18: Print all possible strings that can be made by placing spaces.
 * Challenge 19: A Boolean Matrix Question.
+* Challenge 20: Count number of occurrences (or frequency) in a sorted array
+* Challenge 21: In given range, print all numbers having unique digits.
