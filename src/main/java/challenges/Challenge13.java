@@ -3,6 +3,7 @@ package challenges;
 import java.util.Scanner;
 
 import common.BinaryNode;
+import common.TreeOperator;
 
 /**
 * @date	Mar 23, 2018 11:33:58 AM
@@ -41,7 +42,7 @@ public class Challenge13 {
         	char[] preLN = new char[n];
         	loadValues(scanner, preLN);
             BinaryNode root = BinaryNode.getBinaryTreeFromPreOrderArray(pre, preLN);
-            BinaryNode.printBinaryTree("Pre", root);
+            TreeOperator.printBinaryTree("Pre", root);
         	--t;
         }
         scanner.close();

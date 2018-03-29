@@ -3,7 +3,7 @@ package challenges;
 import java.util.Scanner;
 
 import common.BinaryNode;
-import common.BinaryTreeBuilder;
+import common.TreeOperator;
 
 /**
 * @date	Mar 26, 2018 11:29:13 AM
@@ -45,8 +45,8 @@ public class Challenge14 {
         int t = scanner.nextInt();
         while(t >0){
         	int n = scanner.nextInt();
-            BinaryNode rootA = BinaryTreeBuilder.createBinaryTree(scanner, n);
-            BinaryNode rootB = BinaryTreeBuilder.createBinaryTree(scanner, n);
+            BinaryNode rootA = TreeOperator.createBinaryTree(scanner, n);
+            BinaryNode rootB = TreeOperator.createBinaryTree(scanner, n);
             System.out.println((areTheyIsomorphic(rootA, rootB))?"Yes":"No");
         	--t;
         }

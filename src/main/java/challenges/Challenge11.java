@@ -3,7 +3,7 @@ package challenges;
 import java.util.Scanner;
 
 import common.BinaryNode;
-import common.BinaryTreeBuilder;
+import common.TreeOperator;
 
 /**
 * @date	Mar 22, 2018 12:19:08 PM
@@ -38,7 +38,7 @@ public class Challenge11 {
         while(t >0){
         	int n = scanner.nextInt();
             int k = scanner.nextInt();
-            BinaryNode root = BinaryTreeBuilder.createBinaryTree(scanner, n);
+            BinaryNode root = TreeOperator.createBinaryTree(scanner, n);
             BinaryNode.printNodesAtKDistanceFromRoot(root, 0, k);
         	--t;
         }

@@ -3,7 +3,7 @@ package challenges;
 import java.util.Scanner;
 
 import common.BinaryNode;
-import common.BinaryTreeBuilder;
+import common.TreeOperator;
 import common.OddEven;
 
 /**
@@ -49,7 +49,7 @@ public class Challenge12 {
         int t = scanner.nextInt();
         while(t >0){
         	int n = scanner.nextInt();
-            BinaryNode root = BinaryTreeBuilder.createBinaryTree(scanner, n);
+            BinaryNode root = TreeOperator.createBinaryTree(scanner, n);
             OddEven storage = new OddEven();
             BinaryNode.getLevelDiff(root, 1, storage);
             System.out.println((storage.odd - storage.even));

@@ -50,28 +50,7 @@ public class BinaryNode {
 		getLevelDiff(root.right, currentLevel+1, storage);
 	}
 	
-	public static void printBinaryTree(String order, BinaryNode root){
-		switch(order){
-			case "Pre":
-				printPreOrder(root);
-				break;
-			case "In":
-				printInOrder(root);
-				break;
-			case "Post":
-				printPostOrder(root);
-				break;
-		}
-	}
 	
-	private static void printPreOrder(BinaryNode root){
-		if(root == null){
-			return;
-		}
-		System.out.print(root.data + " ");
-		printPreOrder(root.left);
-		printPreOrder(root.right);
-	}
 	public static BinaryNode getBinaryTreeFromPreOrderArray(int[] pre, char[] preLN){
 		BinaryNode root = null;
 		BinaryNode parent = null;
@@ -109,23 +88,6 @@ public class BinaryNode {
 		return root;
 
 	}
-	private static void printInOrder(BinaryNode root){
-		if(root == null){
-			return;
-		}
-		printPreOrder(root.left);
-		System.out.print(root.data + " ");
-		printPreOrder(root.right);
-	}
-	private static void printPostOrder(BinaryNode root){
-		if(root == null){
-			return;
-		}
-		printPreOrder(root.left);
-		printPreOrder(root.right);
-		System.out.print(root.data + " ");
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
