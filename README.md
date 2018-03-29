@@ -22,3 +22,4 @@ Problems and their solutions
 * Challenge 19: A Boolean Matrix Question.
 * Challenge 20: Count number of occurrences (or frequency) in a sorted array.
 * Challenge 21: In given range, print all numbers having unique digits.
+* Challenge 22: Given a BST node, find the next highest node in O(log(n)) time.
