@@ -1,7 +1,5 @@
 package challenges;
-import java.util.Arrays;
 import java.util.Scanner;
-
 import common.Search;
 
 /**

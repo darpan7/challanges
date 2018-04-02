@@ -25,3 +25,4 @@ Problems and their solutions
 * Challenge 22: Given a BST node, find the next highest node in O(log(n)) time.
 * CodeJam: Revenge of the Pancakes
 * CodeJam: Standing Ovation
+* Challenge 23: Given a cost matrix cost and a position (m, n), write a function that returns cost of minimum cost path to reach (m, n) from (0, 0).
