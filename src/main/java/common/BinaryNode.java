@@ -49,7 +49,37 @@ public class BinaryNode {
 		getLevelDiff(root.left, currentLevel+1, storage);
 		getLevelDiff(root.right, currentLevel+1, storage);
 	}
-	
+	public static void printBorderOf(BinaryNode root){
+		if(root!=null){
+			StringBuilder sb = new StringBuilder();
+			borderOf(root.left, "L", sb);
+			sb.append(root.data); sb.append(" ");
+			borderOf(root.right, "R", sb);
+			System.out.println(sb.toString().trim());
+		}
+	}
+	private static void borderOf(BinaryNode node, String side, StringBuilder sb){
+		if(node!=null){
+			switch(side){
+				case "L":
+					if(node.left!=null){
+						borderOf(node.left, side, sb);
+					}else{
+						borderOf(node.right, side, sb);
+					}
+					sb.append(node.data); sb.append(" ");
+					break;
+				case "R":
+					sb.append(node.data); sb.append(" ");
+					if(node.right!=null){
+						borderOf(node.right, side, sb);
+					}else{
+						borderOf(node.left, side, sb);
+					}
+					break;
+			}
+		}
+	}
 	
 	public static BinaryNode getBinaryTreeFromPreOrderArray(int[] pre, char[] preLN){
 		BinaryNode root = null;
