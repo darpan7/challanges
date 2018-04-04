@@ -11,7 +11,7 @@ Problem:
 =======
 Number Guessing
 https://codejam.withgoogle.com/2018/challenges/0000000000000130/dashboard
-Code Jam Practice Session 2018
+Code Jam ClosestPalindromNumber Session 2018
 Input/Output:
 1 // test cases
 0 // A
