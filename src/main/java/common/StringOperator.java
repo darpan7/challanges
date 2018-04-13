@@ -1,5 +1,6 @@
 package common;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -76,5 +77,29 @@ public class StringOperator {
 			}
 		}
 	}
+	
+	public static Set<String> allPermutations(String s){
+		Set<String> set = new HashSet<String>();
+		startPermutation(set, "", s);
+		return set;
+	}
+	
+	public static void startPermutation(Set<String> set, String prefix, String s){
+		if(s.length()==0){
+			set.add(prefix);
+			return;
+		}
+		for(int i=0; i<s.length(); i++){
+			startPermutation(set, prefix+s.charAt(i), s.substring(0, i) + s.substring(i+1));
+		}
+	}
+//	public static void main(String[] args) {
+//		Set set = allPermutations("abcd"); 
+//		System.out.println(set.size() + " " + set);
+//		set = allPermutations("abcde"); 
+//		System.out.println(set.size() + " " + set);
+//		set = allPermutations("abcdef"); 
+//		System.out.println(set.size() + " " + set);
+//	}
 }
 

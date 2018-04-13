@@ -27,3 +27,5 @@ Problems and their solutions
 * CodeJam: Standing Ovation
 * Challenge 23: Given a cost matrix cost and a position (m, n), write a function that returns cost of minimum cost path to reach (m, n) from (0, 0).
 * Challenge 24: Traverse border of Binary Tree.
+* CodeJam: Senate Evacuation
+* CodeJam: Saving The Universe Again
