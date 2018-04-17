@@ -29,3 +29,4 @@ Problems and their solutions
 * Challenge 24: Traverse border of Binary Tree.
 * CodeJam: Senate Evacuation
 * CodeJam: Saving The Universe Again
+* Challenge 25: Rotate and delete
