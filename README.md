@@ -31,3 +31,5 @@ Problems and their solutions
 * CodeJam: Saving The Universe Again
 * Challenge 25: Rotate and delete
 * Challenge 26: 3 Sum
+* Challenge 27: Group Anagrams
+* Challenge 28: Longest Substring Without Repeating Characters
