@@ -80,7 +80,8 @@ public class Challenge26 {
         		int sum = nums[low] + nums[high];
         		if(sum == need){
         			set.add(Arrays.asList(nums[i], nums[low], nums[high]));
-        			break;
+        			low++;
+        			high--;
         		}
         		if(sum < need){
         			low++;
