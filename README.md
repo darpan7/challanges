@@ -30,3 +30,4 @@ Problems and their solutions
 * CodeJam: Senate Evacuation
 * CodeJam: Saving The Universe Again
 * Challenge 25: Rotate and delete
+* Challenge 26: 3 Sum
