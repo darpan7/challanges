@@ -1,0 +1,29 @@
+Coding Challenge (March 26, 2018):
+=================================
+
+Problem 1:
+---------
+Given a string and list of ignored words, return max frequency word(s).
+
+Problem 2:
+---------
+Given a list of strings, re-order them in lexicographically:
+each string contains first word as id (alphanumeric), then words separated by space.
+except for id, string contains only numbers or words.
+sort words type strings in lexicographically, and append with only number type strings.
+
+
+On-site Questions (May 4th, 2018):
+=================================
+
+Round 1:
+Design TinyURL
+
+Round 2:
+Given a array of integers, return array of indexes. [for every element, you need to put index of NEXT greater element.]
+
+Round 3:
+Give a stream of long, and k: print duplicate values found in every k window.
+
+Round 4:
+Give a n*n matrix, position of queen and locations of blocks, count number of steps queen can traverse in one step from its give position. 

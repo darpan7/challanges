@@ -33,3 +33,4 @@ Problems and their solutions
 * Challenge 26: 3 Sum
 * Challenge 27: Group Anagrams
 * Challenge 28: Longest Substring Without Repeating Characters
+* Challenge 28: Longest Palindromic Substring
