@@ -1,4 +1,4 @@
-package challenges;
+package challenges.geeksforgeeks;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package challenges;
+package challenges.geeksforgeeks;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  =======
  Given a binary string, count number of substrings that start and end with 1.
  Example:
- if the input string is “00100101”, then there are three substrings “1001”, “100101” and “101”.
+ if the input string is â€œ00100101â€�, then there are three substrings â€œ1001â€�, â€œ100101â€� and â€œ101â€�.
  
  Input:
 	The first line of input contains an integer T denoting the number of test cases.
@@ -19,8 +19,8 @@ import java.util.Scanner;
  Output:
 	Print the number of substring starting and ending with 1 in a separate line.
  Constraints:
-	1 ≤ T ≤ 40
-	1 ≤ |s| ≤ 1000
+	1 â‰¤ T â‰¤ 40
+	1 â‰¤ |s| â‰¤ 1000
  Example:
  Input:
  1
