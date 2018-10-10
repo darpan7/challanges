@@ -93,13 +93,13 @@ public class StringOperator {
 			startPermutation(set, prefix+s.charAt(i), s.substring(0, i) + s.substring(i+1));
 		}
 	}
-//	public static void main(String[] args) {
-//		Set set = allPermutations("abcd"); 
-//		System.out.println(set.size() + " " + set);
-//		set = allPermutations("abcde"); 
-//		System.out.println(set.size() + " " + set);
-//		set = allPermutations("abcdef"); 
-//		System.out.println(set.size() + " " + set);
-//	}
+	public static void main(String[] args) {
+		Set set = allPermutations("abc"); 
+		System.out.println(set.size() + " " + set);
+		set = allPermutations("abcde"); 
+		System.out.println(set.size() + " " + set);
+		set = allPermutations("abcdef"); 
+		System.out.println(set.size() + " " + set);
+	}
 }
 

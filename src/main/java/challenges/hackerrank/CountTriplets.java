@@ -25,6 +25,7 @@ public class CountTriplets {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int T = scanner.nextInt();
+		
 		while (T > 0) {
 			Map<Integer, List<Integer>> map = new HashMap<>();
 			Map<Long, List<Integer>> mpNeed = new HashMap<>();

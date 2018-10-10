@@ -20,14 +20,14 @@ public class WordDictionary {
 	
 	public static void main(String[] args) {
 		addWord("at"); addWord("and");addWord("add");addWord("an");
-		System.out.println(search("a"));
-		System.out.println(search(".at"));
+		System.out.println("search a " + search("a"));
+		System.out.println("search .at " + search(".at"));
 		addWord("bat");
-		System.out.println(search(".at"));
-		System.out.println(search("an."));
-		System.out.println(search("a.d."));
-		System.out.println(search("b."));
-		System.out.println(search("a.d"));
-		System.out.println(search("."));
+		System.out.println("search .at " + search(".at"));
+		System.out.println("search an. " + search("an."));
+		System.out.println("search a.d. " + search("a.d."));
+		System.out.println("search b. " + search("b."));
+		System.out.println("search a.d " + search("a.d"));
+		System.out.println("search . " + search("."));
 	}
 }

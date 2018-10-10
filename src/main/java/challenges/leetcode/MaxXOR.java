@@ -29,6 +29,6 @@ public class MaxXOR {
 				x ^= (list[i]^list[j]);
 			}
 		}*/
-		//System.out.println(x);
+		System.out.println(x);
 	}
 }
